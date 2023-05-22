@@ -1,0 +1,67 @@
+#include<WiFi.h>
+
+
+
+Step 2: #define LED 2
+
+ Step 3: #define WIFISSID "WiFi Name"
+
+ Step 4: #define PASSWORD "WiFi Password"
+
+
+ Step 5: void setup()
+
+
+
+ 
+
+Step 6: Serial.begin(9600);
+
+
+Step 8:  pinMode(LED, OUTPUT);
+
+
+Step 9: Serial.print("\n\nConnecting to");
+
+Step 10: Serial.println(WIFISSID);
+
+ 
+
+Step 11: WiFi.begin(WIFISSID,PASSWORD);
+
+ 
+
+Step 12: while (WiFi.status() != WL_CONNECTED){
+
+  delay(500);
+
+  Serial.print(".");
+
+}
+
+
+Step 13: Serial.println("WiFi connected.IP address:");
+
+Step 14: Serial.println(WiFi.localIP())
+
+
+ 
+
+Step 15: void loop()
+
+
+ 
+
+Step16:  
+
+ digitalWrite(LED, HIGH);   // turn the LED on (HIGH is the voltage level)
+
+  Serial.println("HIGH");
+
+  delay(500);                       // wait for half a second
+
+  digitalWrite(LED, LOW);    // turn the LED off by making the voltage LOW
+
+  Serial.println("LOW");
+
+  delay(500);
